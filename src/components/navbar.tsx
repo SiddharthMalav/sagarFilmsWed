@@ -1,14 +1,16 @@
 "use client"
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'Elegance Studio', href: 'Elegance-Studio', current: false },
-    { name: 'Pre-Ceremony Portraits', href: 'Pre-Ceremony-Portraits', current: false },
-    { name: 'Engagement Storytellers', href: 'Engagement-Storytellers', current: false },
-    { name: 'Union Storytellers', href: 'Union-Storytellers', current: false },
-    { name: 'Contact Us', href: 'Contact-Us', current: false },
+    { name: 'Home', href: '/' },
+    { name: 'Elegance Studio', href: '/Elegance-Studio' },
+    { name: 'Pre-Ceremony Portraits', href: '/Pre-Ceremony-Portraits' },
+    { name: 'Engagement Storytellers', href: '/Engagement-Storytellers' },
+    { name: 'Union Storytellers', href: '/Union-Storytellers' },
+    { name: 'Contact Us', href: '/Contact-Us' },
 ]
 
 function classNames(...classes: string[]) {
@@ -16,8 +18,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+    const pathname = usePathname()
+    console.log("pathname", pathname)
+
     return (
-        <Disclosure as="nav" className="bg-white">
+        <Disclosure as="nav" className="bg-white z-50 absolute w-full">
             <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
@@ -43,17 +48,16 @@ export default function Navbar() {
                         <div className="hidden lg:ml-6 lg:block">
                             <div className="flex space-x-1">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'text-cyan-500' : 'text-gray-900 hover:text-cyan-400',
-                                            'rounded-md px-3 py-2 text-sm font-semibold',
+                                            pathname == item.href ? 'text-cyan-500' : 'text-gray-900 hover:text-cyan-400',
+                                            'rounded-md px-3 py-2 cursor-pointer text-sm font-semibold',
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -68,10 +72,9 @@ export default function Navbar() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'text-cyan-500' : 'text-gray-900 hover:text-cyan-400',
-                                'block rounded-md px-3 py-2 text-sm font-semibold',
+                                pathname == item.href ? 'text-cyan-500' : 'text-gray-900 hover:text-cyan-400',
+                                'block rounded-md cursor-pointer px-3 py-2 text-sm font-semibold',
                             )}
                         >
                             {item.name}

@@ -11,10 +11,10 @@ const AboutUs = () => {
 
       </div>
       <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-        <img src="https://tailwindui.com/plus/img/ecommerce-images/product-feature-03-detail-01.jpg" className="rounded-lg bg-gray-100" />
-        <img src="https://tailwindui.com/plus/img/ecommerce-images/product-feature-03-detail-02.jpg" className="rounded-lg bg-gray-100" />
-        <img src="https://tailwindui.com/plus/img/ecommerce-images/product-feature-03-detail-03.jpg" className="rounded-lg bg-gray-100" />
-        <img src="https://tailwindui.com/plus/img/ecommerce-images/product-feature-03-detail-04.jpg" className="rounded-lg bg-gray-100" />
+        <img src="/images/0I1A9668_11zon.jpg" className="rounded-lg bg-gray-100" />
+        <img src="/images/IMG_9406_11zon.jpg" className="rounded-lg bg-gray-100" />
+        <img src="/images/IMG_9401_11zon.jpg" className="rounded-lg bg-gray-100" />
+        <img src="/images/0G6A8779-2_11zon.jpg" className="rounded-lg bg-gray-100" />
       </div>
     </div>
   </div>
