@@ -35,12 +35,12 @@ export default function Navbar() {
                     </div>
                     <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
                         <div className="flex shrink-0 items-center text-gray-900">
-                            Sagar Films Logo
-                            {/* <img
+
+                            <img
                                 alt="Your Company"
-                                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                                src="/images/fevicon.jpeg"
                                 className="h-8 w-auto"
-                            /> */}
+                            />
                         </div>
 
                     </div>
