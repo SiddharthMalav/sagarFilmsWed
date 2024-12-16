@@ -3,7 +3,7 @@ import React from 'react'
 const AboutUs = () => {
   return (
     <div className="bg-white">
-    <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <div className="mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8 grid  grid-cols-1  gap-x-8 gap-y-16  py-24  sm:py-32  lg:grid-cols-2 ">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Sagar Films</h2>
         <p className="mt-4 text-gray-500">Sagar Films, located in Kunhari, Kota, Rajasthan, is a professional photography business dedicated to capturing your special moments with precision and creativity. With years of experience in the photography industry, Sagar Films has earned a reputation as a trusted name in the field.</p>

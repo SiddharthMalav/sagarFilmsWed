@@ -29,6 +29,7 @@ const ContactUs = () => {
                     <input
                       id="first-name"
                       name="first-name"
+                      placeholder='Enter your First Name'
                       type="text"
                       autoComplete="given-name"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
@@ -42,6 +43,7 @@ const ContactUs = () => {
                   <div className="mt-2.5">
                     <input
                       id="last-name"
+                      placeholder='Enter your Last Name'
                       name="last-name"
                       type="text"
                       autoComplete="family-name"
@@ -58,6 +60,7 @@ const ContactUs = () => {
                       id="email"
                       name="email"
                       type="email"
+                      placeholder='Enter your Email'
                       autoComplete="email"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
@@ -90,6 +93,7 @@ const ContactUs = () => {
                       id="message"
                       name="message"
                       rows={4}
+                      placeholder='Enter your Message'
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                       defaultValue={''}
                     />
@@ -110,9 +114,10 @@ const ContactUs = () => {
         <div>
           <h2 className="text-3xl pb-4 font-bold tracking-tight sm:text-4xl max-lg:text-center">Contact Us</h2>
           <h2 className="lg:pl-4 max-lg:justify-center  text-2xl flex items-center gap-2 font-semibold tracking-tight sm:text-3xl max-lg:text-center"><svg height={20} className='pt-[4px]' width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64l256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2l0 256c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1l0-17.1 0-128 0-17.1 14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z" /></svg> Office</h2>
-          <p className="lg:pl-4 mb-2 text-gray-500 max-lg:text-center">Kunhadi Kota</p>
+          <p className="lg:pl-4 text-gray-500 max-lg:text-center"> H NO. 114 Laxman Vihar II</p>
+          <p className="lg:pl-4 mb-2 text-gray-500 max-lg:text-center"> Kunhadi, Kota</p>
           <h2 className="lg:pl-4 max-lg:justify-center  text-2xl flex items-center gap-2 font-semibold tracking-tight sm:text-3xl max-lg:text-center"><svg height={20} className='pt-[4px]' width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" /></svg>Working Hours</h2>
-          <p className="lg:pl-4 mb-2 text-gray-500 max-lg:text-center">Monday to Saturday: 7.00 AM – 12.00 AM</p>
+          <p className="lg:pl-4 mb-2 text-gray-500 max-lg:text-center">Monday to Saturday: 10.00 AM – 10.00 PM</p>
 
         </div>
       </div>

@@ -7,10 +7,9 @@ import { usePathname } from 'next/navigation'
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Elegance Studio', href: '/Elegance-Studio' },
-    { name: 'Pre-Ceremony Portraits', href: '/Pre-Ceremony-Portraits' },
-    { name: 'Engagement Storytellers', href: '/Engagement-Storytellers' },
-    { name: 'Union Storytellers', href: '/Union-Storytellers' },
-    { name: 'Contact Us', href: '/Contact-Us' },
+    { name: 'Pre-Wedding', href: '/Pre-Wedding' },
+    { name: 'Candids', href: '/Candids' },
+    { name: 'Wedding-Films', href: '/Wedding-Films' },
 ]
 
 function classNames(...classes: string[]) {

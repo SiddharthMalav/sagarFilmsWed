@@ -1,0 +1,21 @@
+@keyframes popup {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation img {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.animation img.animate-popup {
+  opacity: 1;
+  transform: translateY(0);
+}
