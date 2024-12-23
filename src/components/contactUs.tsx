@@ -1,6 +1,69 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
+// import emailjs from 'emailjs-com';
+
+type FormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
+};
 
 const ContactUs = () => {
+  const [formState, setFormState] = useState<FormState>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    console.log("eee", e)
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    console.log("e", formState)
+    // emailjs
+    //   .send(
+    //     'YOUR_SERVICE_ID',
+    //     'YOUR_TEMPLATE_ID',
+    //     {
+    //       firstName: formState.firstName,
+    //       lastName: formState.lastName,
+    //       email: formState.email,
+    //       phoneNumber: formState.phoneNumber,
+    //       message: formState.message,
+    //     },
+    //     'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+    //   )
+    //   .then(
+    //     () => {
+    //       alert('Message sent successfully!');
+    //       setFormState({
+    //         firstName: '',
+    //         lastName: '',
+    //         email: '',
+    //         phoneNumber: '',
+    //         message: '',
+    //       });
+    //     },
+    //     (error) => {
+    //       alert('Failed to send message. Please try again.');
+    //       console.error('EmailJS error:', error);
+    //     }
+    //   );
+  };
+
   return (
     <div className="bg-white py-6">
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
@@ -19,7 +82,7 @@ const ContactUs = () => {
                 className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
               />
             </div>
-            <form action="#" className="mx-auto max-w-xl">
+            <form onSubmit={handleSubmit} className="mx-auto max-w-xl">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="first-name" className="block text-sm/6 font-semibold ">
@@ -27,12 +90,14 @@ const ContactUs = () => {
                   </label>
                   <div className="mt-2.5">
                     <input
-                      id="first-name"
-                      name="first-name"
+                      id="firstName"
+                      name="firstName"
                       placeholder='Enter your First Name'
                       type="text"
+                      value={formState.firstName}
+                      onChange={handleChange}
                       autoComplete="given-name"
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                      className="text-black block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
                   </div>
                 </div>
@@ -42,12 +107,14 @@ const ContactUs = () => {
                   </label>
                   <div className="mt-2.5">
                     <input
-                      id="last-name"
+                      id="lastName"
                       placeholder='Enter your Last Name'
-                      name="last-name"
+                      name="lastName"
                       type="text"
+                      value={formState.lastName}
+                      onChange={handleChange}
                       autoComplete="family-name"
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                      className="text-black block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
                   </div>
                 </div>
@@ -60,9 +127,11 @@ const ContactUs = () => {
                       id="email"
                       name="email"
                       type="email"
+                      value={formState.email}
+                      onChange={handleChange}
                       placeholder='Enter your Email'
                       autoComplete="email"
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                      className="text-black block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
                   </div>
                 </div>
@@ -75,11 +144,13 @@ const ContactUs = () => {
                       <div className="grid shrink-0 grid-cols-1 focus-within:relative">
                       </div>
                       <input
-                        id="phone-number"
-                        name="phone-number"
+                        id="phoneNumber"
+                        name="phoneNumber"
                         type="text"
+                        value={formState.phoneNumber}
+                        onChange={handleChange}
                         placeholder="123-456-7890"
-                        className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base  placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
+                        className="text-black block min-w-0 grow py-1.5 pl-1 pr-3 text-base  placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                       />
                     </div>
                   </div>
@@ -93,9 +164,10 @@ const ContactUs = () => {
                       id="message"
                       name="message"
                       rows={4}
+                      value={formState.message}
+                      onChange={handleChange}
                       placeholder='Enter your Message'
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                      defaultValue={''}
+                      className="text-black block w-full rounded-md bg-white px-3.5 py-2 text-base  outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
                   </div>
                 </div>

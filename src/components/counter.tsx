@@ -15,7 +15,7 @@ export default function Counter({ MaxNumber }: { MaxNumber: string }) {
       if (start) {
         setStart(false); // Prevent further counting
         const counte = setInterval(() => {
-          minimum = minimum + 100;
+          minimum = minimum + 500;
           setCount(minimum);
           if (minimum >= maxNumber) clearInterval(counte);
         }, 10);
