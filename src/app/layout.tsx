@@ -9,6 +9,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -17,8 +18,14 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Sagar-Films | Best Wedding Services in Kota",
-  description: "Discover the best wedding services in Kota with Sagar-Films. From pre-wedding shoots to complete wedding coverage, we make your special day memorable.",
+  description:
+    "Sagar-Films is your one-stop solution for premium wedding services in Kota. From candid photography to luxurious wedding planning, we make your big day truly special.",
   keywords: [
+    "sagarfilms",
+    "sagar films",
+    "sagar films kota",
+    "sagarfilms kota",
+    "kota sagarfilms",
     "best wedding",
     "Kota best wedding",
     "wedding photography Kota",
@@ -26,43 +33,56 @@ export const metadata: Metadata = {
     "Sagar-Films wedding site",
     "pre-wedding shoots Kota",
     "Kota wedding planner",
+    "wedding photography packages",
+    "destination wedding Kota",
+    "luxury wedding services Kota",
+    "budget-friendly wedding photography",
+    "candid wedding photography",
+    "traditional wedding shoots",
+    "wedding videography Kota",
+    "wedding planning services",
+    "Kota wedding venues",
+    "wedding decorations Kota",
+    "Kota bridal photography",
+    "couple photography in Kota",
   ],
-  authors: [
-    { name: "Sagar-Films", url: "https://sagarfilms.in" },
-  ],
-   openGraph: {
+  authors: [{ name: "Sagar-Films", url: "https://sagarfilms.in" }],
+  openGraph: {
     title: "Sagar-Films | Best Wedding Services in Kota",
     description:
-      "Sagar-Films specializes in providing top-notch wedding photography and services in Kota. Book us to make your wedding unforgettable.",
+      "Sagar-Films specializes in premium wedding photography, videography, and planning services in Kota. Make your dream wedding unforgettable with us.",
     url: "https://sagarfilms.in",
     type: "website",
-    // images: [
-    //   {
-    //     url: "https://sagar-films.com/og-image.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Best Wedding Services in Kota",
-    //   },
-    // ],
+    images: [
+      {
+        url: "https://sagarfilms.in/og-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Sagar-Films - Best Wedding Services in Kota",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@Sagarfilms",
     title: "Sagar-Films | Best Wedding Services in Kota",
     description:
-      "Sagar-Films offers premium wedding services, including photography, videography, and planning, tailored for the best experience in Kota.",
-    // images: [
-    //   {
-    //     url: "https://sagar-films.com/og-image.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Best Wedding Services in Kota",
-    //   },
-    // ],
+      "Discover Sagar-Films, offering premium wedding photography and planning services in Kota. Let us make your wedding day truly unforgettable.",
+    images: [
+      {
+        url: "https://sagarfilms.in/og-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Sagar-Films - Best Wedding Services in Kota",
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://sagarfilms.in",
   },
 };
 
@@ -76,6 +96,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
+        <link rel="canonical" href="https://sagarfilms.in" />
       </head>
       <body
         suppressHydrationWarning
