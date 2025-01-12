@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function WhatWeProvide() {
   return (
-    <div className="mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8 grid  gap-x-8 gap-t-16  pt-24  sm:pt-32 ">
+    <div className="mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8 grid  gap-x-8 gap-t-16  pt-20  sm:pt-30 pb-14 ">
       <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What We Provide</h2>
       <div className="font-serif mt-4 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         <div>

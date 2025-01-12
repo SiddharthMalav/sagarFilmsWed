@@ -1,7 +1,6 @@
 const ContactUs = () => {
-
   return (
-    <div className="bg-[#ffc9944D] py-20 sm:py-24">
+    <div className="bg-[url('/images/reachOutToUsBg.png')] py-20 sm:py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold tracking-tight text-center pb-8 sm:text-4xl">
       Reach Out to Us</h2>
@@ -21,8 +20,8 @@ const ContactUs = () => {
             </svg>
             Office
           </div>
-          <p className="text-gray-500">H NO. 114 Laxman Vihar II</p>
-          <p className="text-gray-500">Kunhadi, Kota</p>
+          <p className="text-gray-800">H NO. 114 Laxman Vihar II</p>
+          <p className="text-gray-800">Kunhadi, Kota</p>
         </div>
   
         {/* Working Hours Section */}
@@ -39,7 +38,7 @@ const ContactUs = () => {
             </svg>
             Working Hours
           </div>
-          <p className="text-gray-500">
+          <p className="text-gray-800">
             Monday to Saturday:<br />
             10.00 AM – 10.00 PM
           </p>
