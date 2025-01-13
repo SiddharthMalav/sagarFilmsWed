@@ -3,7 +3,7 @@ import Counter from './counter'
 
 export const CompanyStatics = () => {
   return (
-    <section className='relative py-18 sm:py-20 bg-gradient-to-r from-[#000099] via-[#5a5acc] to-[#cc33ff]'>
+    <section className='relative py-16 sm:py-20 bg-gradient-to-r from-[#000099] via-[#5a5acc] to-[#cc33ff]'>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <section className='relative z-10'> <h2 className="px-4 text-white text-center text-2xl font-semibold tracking-tight  sm:text-3xl">Our Remarkable Achievements to Share</h2>

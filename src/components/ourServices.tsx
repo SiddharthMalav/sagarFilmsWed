@@ -43,7 +43,7 @@ export default function OurServices() {
 
   return (
     <div className="bg-[url('/images/reachOutToUsBg.png')]">
-      <div className='mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8  py-18 sm:py-20'>
+      <div className='mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8  py-16 sm:py-20'>
         <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl pb-4">Our Services</h2>
 
         <MultiCrousal items={cards} responsive={responsive} />
