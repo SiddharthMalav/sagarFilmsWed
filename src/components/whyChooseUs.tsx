@@ -9,10 +9,10 @@ export const WhyChooseUs = () => {
           <p className="text-sm text-gray-600 pt-2 pb-4">At Sagar Films, we believe that every wedding is a story waiting to be told, and we are here to capture those precious moments with love, precision, and expertise. Here are a few reasons why couples choose us for their special day.
           </p>
           <div className="grid grid-cols-2 grid-rows-2 gap-4">
-            <img src="/images/0I1A9668_11zon.jpg" className=" rounded-lg bg-gray-100" />
-            <img src="/images/IMG_9406_11zon.jpg" className=" rounded-lg bg-gray-100" />
-            <img src="/images/IMG_9401_11zon.jpg" className=" rounded-lg bg-gray-100" />
-            <img src="/images/0G6A8779-2_11zon.jpg" className="  rounded-lg bg-gray-100" />
+            <img src="/images/IMG_9447_11zon.jpg" className=" rounded-lg bg-gray-100" />
+            <img src="/images/pre-wedding/0G6A9149d-1_11zon.jpg" className=" rounded-lg bg-gray-100" />
+            <img src="/images/pre-wedding/GPK_7144 (1)_11zon.jpg" className=" rounded-lg bg-gray-100" />
+            <img src="/images/pre-wedding/0I1A5644.JPG" className="  rounded-lg bg-gray-100" />
           </div>
         </div>
         <div>
