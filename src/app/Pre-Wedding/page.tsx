@@ -31,14 +31,20 @@ export default function PreWedding() {
     "/images/pre-wedding/0I1A9751.jpg",
   ]
   return (
-    <section className="pt-[64px]">
-      <Banner src={'/images/pre-wedding/a9_11zon (1).jpg'} />
-      <section className='mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8'>
-        <TitleWithDescription title={'Journey to Forever: Celebrating Love Before the Vows'} description={`
-The pre-wedding phase is a meaningful celebration of love and commitment, capturing the couple's journey through shared dreams, cherished moments, and bonding with loved ones. Marked by intimate gatherings, photoshoots, or rituals, it reflects their unique story and unites families and cultures. This special time adds joy, laughter, and personal touches to the wedding journey, making it a magical prelude to "happily ever after".`} />
+    <main className="bg-[#faf9f6]">
+      <Banner 
+        src="/images/pre-wedding/a9_11zon (1).jpg" 
+        title="PRE-WEDDING SHOOTS" 
+        subtitle="THE PRELUDE TO FOREVER" 
+      />
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <TitleWithDescription 
+          title="Journey to Forever: Celebrating Love Before the Vows" 
+          description="The pre-wedding phase is a meaningful celebration of love and commitment, capturing the couple's journey through shared dreams, cherished moments, and bonding with loved ones. Marked by intimate gatherings, photoshoots, or rituals, it reflects their unique story and unites families and cultures." 
+        />
         <ImagesView srcs={imagesSrcs} />
       </section>
       <FollowUs />
-    </section>
+    </main>
   );
 }

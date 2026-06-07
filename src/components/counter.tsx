@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function Counter({ MaxNumber }: { MaxNumber: string }) {
   const [count, setCount] = useState(0);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(true);
 
   const isElementVisible = useIsElementVisible(elementRef);
@@ -14,26 +14,32 @@ export default function Counter({ MaxNumber }: { MaxNumber: string }) {
     const counter = (minimum: number, maxNumber: number) => {
       if (start) {
         setStart(false); // Prevent further counting
-        const counte = setInterval(() => {
-          minimum = minimum + 500;
+        // Dynamically compute step so it ticks ~40 times to complete
+        const step = Math.max(1, Math.ceil(maxNumber / 45));
+        
+        const timer = setInterval(() => {
+          minimum = Math.min(maxNumber, minimum + step);
           setCount(minimum);
-          if (minimum >= maxNumber) clearInterval(counte);
-        }, 10);
+          if (minimum >= maxNumber) {
+            clearInterval(timer);
+          }
+        }, 20);
       }
     };
 
     if (!isNaN(MaxNum) && isElementVisible) {
       counter(0, MaxNum);
     }
-  }, [MaxNumber, isElementVisible]);
+  }, [MaxNumber, isElementVisible, start]);
 
   return (
-    <div ref={elementRef} id="list-item">
-      {count}</div>
+    <div ref={elementRef} id="list-item" className="font-semibold tabular-nums">
+      {count.toLocaleString()}
+    </div>
   );
 }
 
-export const useIsElementVisible = (target: React.RefObject<HTMLElement>) => {
+export const useIsElementVisible = (target: React.RefObject<HTMLElement | null>) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -48,13 +54,14 @@ export const useIsElementVisible = (target: React.RefObject<HTMLElement>) => {
       }
     );
 
-    if (target.current) {
-      observer.observe(target.current);
+    const currentTarget = target.current;
+    if (currentTarget) {
+      observer.observe(currentTarget);
     }
 
     return () => {
-      if (target.current) {
-        observer.unobserve(target.current);
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
       }
     };
   }, [target]);

@@ -24,12 +24,20 @@ export default function Candids() {
     "/images/candids/730A7624 copy_11zon.jpg",
   ]
   return (
-    <section className="pt-[64px] ">
-      <Banner src={'/images/candids/0I1A1776_11zon.jpg'} />
-      <section className='mx-auto lg:max-w-7xl max-w-2xl items-center px-4 sm:px-6 lg:px-8'>
-        <TitleWithDescription title={'Timeless Moments: The Art of Candid Photography'} description={`Candids capture the raw, unfiltered essence of life's most beautiful moments. They tell stories through spontaneous expressions, heartfelt emotions, and natural interactions, preserving memories as they unfold. These photographs go beyond posed perfection, focusing on the authenticity of the moment. Whether it's a shared laugh, a stolen glance, or a fleeting joy, candids bring out the true spirit of the occasion. Each frame is a timeless reminder of life's genuine beauty, filled with emotions that words cannot express.`} />
-        <ImagesView srcs={imagesSrcs} /></section>
+    <main className="bg-[#faf9f6]">
+      <Banner 
+        src="/images/candids/0I1A1776_11zon.jpg" 
+        title="CANDID MOMENTS" 
+        subtitle="UNFILTERED EMOTIONS CAPTURED" 
+      />
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <TitleWithDescription 
+          title="Timeless Moments: The Art of Candid Photography" 
+          description="Candids capture the raw, unfiltered essence of life's most beautiful moments. They tell stories through spontaneous expressions, heartfelt emotions, and natural interactions, preserving memories as they unfold. These photographs go beyond posed perfection, focusing on the authenticity of the moment." 
+        />
+        <ImagesView srcs={imagesSrcs} />
+      </section>
       <FollowUs />
-    </section>
+    </main>
   );
 }
