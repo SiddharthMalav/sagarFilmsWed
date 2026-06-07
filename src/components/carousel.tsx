@@ -109,9 +109,9 @@ export default function CarouselComponent() {
           >
             <Link 
               href={HeroSlides[current].link} 
-              className="inline-block border border-white/30 text-white hover:border-[#c5a880] hover:text-neutral-950 hover:bg-[#c5a880] px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase transition-all duration-500 font-bold rounded-full cursor-pointer shadow-lg hover:shadow-[#c5a880]/10"
+              className="btn-premium-gold inline-block px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase font-bold rounded-full cursor-pointer shadow-lg hover:shadow-[#c5a880]/10"
             >
-              Explore Portfolio
+              <span>Explore Portfolio</span>
             </Link>
           </motion.div>
         </div>

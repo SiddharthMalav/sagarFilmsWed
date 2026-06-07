@@ -84,9 +84,9 @@ export default function Navbar() {
             
             <Link 
               href="#contact"
-              className="px-5 py-2.5 rounded-full bg-[#c5a880] text-[#0a0a0a] hover:bg-[#b5966c] text-[10px] tracking-[0.25em] uppercase font-bold transition-all duration-300 shadow-md hover:shadow-[#c5a880]/20"
+              className="btn-premium-gold px-5 py-2.5 rounded-full text-[10px] tracking-[0.25em] uppercase font-bold shadow-md hover:shadow-[#c5a880]/20"
             >
-              Book Now
+              <span>Book Now</span>
             </Link>
           </div>
 
