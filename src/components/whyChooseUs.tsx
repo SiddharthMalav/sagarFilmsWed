@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const points = [
   {
@@ -45,10 +46,13 @@ export const WhyChooseUs = () => {
                   className="overflow-hidden rounded-3xl border border-neutral-200/40 shadow-md group relative aspect-[3/4]"
                 >
                   <div className="absolute inset-0 bg-neutral-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
+                  <Image 
                     src="/images/IMG_9447_11zon.jpg" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 block" 
                     alt="Wedding couple" 
+                    quality={80}
                   />
                 </motion.div>
 
@@ -60,10 +64,13 @@ export const WhyChooseUs = () => {
                   className="overflow-hidden rounded-3xl border border-neutral-200/40 shadow-md group relative aspect-square"
                 >
                   <div className="absolute inset-0 bg-neutral-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
+                  <Image 
                     src="/images/pre-wedding/GPK_7144 (1)_11zon.jpg" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 block" 
                     alt="Couple portrait" 
+                    quality={80}
                   />
                 </motion.div>
               </div>
@@ -78,10 +85,13 @@ export const WhyChooseUs = () => {
                   className="overflow-hidden rounded-3xl border border-neutral-200/40 shadow-md group relative aspect-square"
                 >
                   <div className="absolute inset-0 bg-neutral-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
+                  <Image 
                     src="/images/pre-wedding/0G6A9149d-1_11zon.jpg" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 block" 
                     alt="Pre-wedding shoot" 
+                    quality={80}
                   />
                 </motion.div>
 
@@ -93,10 +103,13 @@ export const WhyChooseUs = () => {
                   className="overflow-hidden rounded-3xl border border-neutral-200/40 shadow-md group relative aspect-[3/4]"
                 >
                   <div className="absolute inset-0 bg-neutral-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
+                  <Image 
                     src="/images/pre-wedding/0I1A5644.JPG" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 block" 
                     alt="Scenic couple shoot" 
+                    quality={80}
                   />
                 </motion.div>
               </div>

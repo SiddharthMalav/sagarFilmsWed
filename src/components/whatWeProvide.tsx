@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Highlights = [
   {
@@ -75,10 +76,13 @@ export default function WhatWeProvide() {
                 {/* Thin gold border alignment guides */}
                 <div className="absolute inset-5 border border-[#c5a880]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 pointer-events-none scale-95 group-hover:scale-100" />
                 
-                <img 
+                <Image 
                   src={item.image} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
                   alt={item.title}
+                  quality={80}
                 />
                 
                 {/* Shadow Gradient Overlay */}

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import ChatWithUs from "@/components/chatWithUs";
 import SmoothScroll from "@/components/SmoothScroll";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -11,10 +12,10 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -101,9 +102,10 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#faf8f5] text-[#0a0a0a]`}
+        className={`${playfair.variable} ${plusJakarta.variable} font-sans antialiased bg-[#faf8f5] text-[#0a0a0a]`}
       >
         <SmoothScroll>
+          <SchemaMarkup />
           <Navbar />
           <ChatWithUs />
           {children}

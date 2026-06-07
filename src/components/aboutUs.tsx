@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Images = [
   { src: "/images/0I1A9668_11zon.jpg", alt: "Wedding guest candid", delay: 0.1 },
@@ -81,15 +82,18 @@ export default function AboutUs() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10% 0px" }}
                 transition={{ duration: 1.2, delay: img.delay, ease: [0.16, 1, 0.3, 1] }}
-                className={`overflow-hidden rounded-3xl border border-neutral-200/30 shadow-md group relative ${
+                className={`overflow-hidden rounded-3xl border border-neutral-200/30 shadow-md group relative h-48 sm:h-60 ${
                   img.offset ? 'mt-6 sm:mt-8' : ''
                 }`}
               >
                 <div className="absolute inset-0 bg-neutral-900/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <img 
+                <Image 
                   src={img.src} 
-                  className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 block" 
                   alt={img.alt} 
+                  quality={80}
                 />
               </motion.div>
             ))}

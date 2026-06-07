@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -62,10 +63,14 @@ export default function CarouselComponent() {
         >
           {/* Heavy cinematic dark overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-neutral-950/40 z-10" />
-          <img 
+          <Image 
             src={HeroSlides[current].image} 
-            className="object-cover w-full h-full select-none" 
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover select-none" 
             alt={`Slide ${current + 1}`} 
+            quality={85}
           />
         </motion.div>
       </AnimatePresence>
