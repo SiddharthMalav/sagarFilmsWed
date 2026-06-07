@@ -141,7 +141,6 @@ export default function CarouselComponent() {
           <button
             key={index}
             onClick={() => {
-              setDirection(index > current ? 1 : -1);
               setCurrent(index);
             }}
             className="group relative h-1.5 w-12 rounded-full overflow-hidden bg-white/20 focus:outline-none cursor-pointer"
