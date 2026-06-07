@@ -31,7 +31,7 @@ export default function PreWedding() {
     "/images/pre-wedding/0I1A9751.jpg",
   ]
   return (
-    <main className="bg-[#faf9f6]">
+    <main className="bg-[#faf8f5]">
       <Banner 
         src="/images/pre-wedding/a9_11zon (1).jpg" 
         title="PRE-WEDDING SHOOTS" 

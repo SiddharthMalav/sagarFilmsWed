@@ -1,90 +1,146 @@
 "use client"
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
+import { ArrowUp } from 'lucide-react';
+
+const links = [
+  { name: 'Home', href: '/' },
+  { name: 'Elegance Studio', href: '/Elegance-Studio' },
+  { name: 'Pre-Wedding', href: '/Pre-Wedding' },
+  { name: 'Candids', href: '/Candids' },
+  { name: 'Wedding-Films', href: '/Wedding-Films' }
+];
 
 const FollowUs = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-[#121212] border-t border-neutral-800 py-16 text-center relative overflow-hidden">
-      {/* Decorative accent lines */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/30 to-transparent" />
+    <footer className="bg-[#0a0a0a] text-white border-t border-white/5 py-16 sm:py-24 relative overflow-hidden">
+      {/* Accent lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/30 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Brand Name */}
-        <div className="space-y-2">
-          <h2 className="text-xl sm:text-2xl font-normal tracking-[0.2em] text-white font-serif-luxury uppercase">
-            SAGAR FILMS
-          </h2>
-          <p className="text-xs tracking-[0.15em] text-[#c5a880] uppercase">
-            Capturing Visual Legacy
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/5">
+          
+          {/* Brand Info (5 Cols) */}
+          <div className="md:col-span-5 space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-xl sm:text-2xl font-light tracking-[0.25em] text-white font-serif-luxury uppercase">
+                SAGAR FILMS
+              </h2>
+              <p className="text-[10px] tracking-[0.2em] text-[#c5a880] uppercase font-bold">
+                Capturing Visual Legacy
+              </p>
+            </div>
+            <p className="text-gray-400 text-sm font-light leading-relaxed max-w-sm">
+              We capture the fleeting beauty of wedding stories, documenting your most honest gestures and grandest moments with absolute devotion.
+            </p>
+            
+            {/* Social Icons */}
+            <div className="flex gap-4 pt-2">
+              {/* Instagram */}
+              <button 
+                onClick={() => window.location.href = "https://www.instagram.com/sagarfilms.in?igsh=MTJ1OWhxZ256MjQzaw=="} 
+                className="group h-10 w-10 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer text-gray-400"
+                aria-label="Instagram Profile"
+              >
+                <svg 
+                  className="fill-current group-hover:text-[#c5a880] group-hover:scale-110 transition-all duration-300" 
+                  height={18} 
+                  width={18} 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </button>
+              
+              {/* YouTube */}
+              <button 
+                onClick={() => window.location.href = "https://youtube.com/@sagarfilmskota?si=9gH3koD3NTx0ruJq"} 
+                className="group h-10 w-10 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer text-gray-400"
+                aria-label="YouTube Channel"
+              >
+                <svg 
+                  className="fill-current group-hover:text-[#c5a880] group-hover:scale-110 transition-all duration-300" 
+                  height={18} 
+                  width={18} 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 576 512"
+                >
+                  <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                </svg>
+              </button>
 
-        {/* Social Media Label */}
-        <p className="text-sm text-gray-400 font-light tracking-wide max-w-md mx-auto">
-          Follow our latest stories, behind-the-scenes shoots, and cinema releases on our social channels.
-        </p>
+              {/* WhatsApp / Phone */}
+              <button 
+                onClick={() => window.location.href = "https://wa.me/7976881511?text=Hi%20SagarFilms,%20I%20am%20looking%20for%20photography%20Service."} 
+                className="group h-10 w-10 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer text-gray-400"
+                aria-label="WhatsApp Chat"
+              >
+                <svg 
+                  className="fill-current group-hover:text-[#c5a880] group-hover:scale-110 transition-all duration-300" 
+                  height={18} 
+                  width={18} 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-        {/* Social Icons Grid */}
-        <div className="flex justify-center items-center gap-6">
-          {/* Instagram */}
-          <button 
-            onClick={() => window.location.href = "https://www.instagram.com/sagarfilms.in?igsh=MTJ1OWhxZ256MjQzaw=="} 
-            className="group h-12 w-12 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer"
-            aria-label="Instagram Profile"
-          >
-            <svg 
-              className="fill-gray-400 group-hover:fill-[#c5a880] group-hover:scale-110 transition-all duration-300" 
-              height={20} 
-              width={20} 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 448 512"
-            >
-              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-            </svg>
-          </button>
+          {/* Navigation Links Column (3 Cols) */}
+          <div className="md:col-span-3 space-y-6">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-bold">Navigation</h3>
+            <ul className="space-y-3">
+              {links.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-gray-400 hover:text-white text-xs tracking-wider transition-colors duration-300 font-light block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* YouTube */}
-          <button 
-            onClick={() => window.location.href = "https://youtube.com/@sagarfilmskota?si=9gH3koD3NTx0ruJq"} 
-            className="group h-12 w-12 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer"
-            aria-label="YouTube Channel"
-          >
-            <svg 
-              className="fill-gray-400 group-hover:fill-[#c5a880] group-hover:scale-110 transition-all duration-300" 
-              height={20} 
-              width={20} 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 576 512"
-            >
-              <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
-            </svg>
-          </button>
+          {/* Contact Column (4 Cols) */}
+          <div className="md:col-span-4 space-y-6">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-bold">Contact Studio</h3>
+            <div className="space-y-3 text-xs text-gray-400 font-light leading-relaxed">
+              <p>H NO. 114 Laxman Vihar II, Kunhadi, Kota</p>
+              <p>Email: inquiries@sagarfilms.in</p>
+              <p>Phone: +91 79768 81511</p>
+            </div>
+          </div>
 
-          {/* WhatsApp */}
-          <button 
-            onClick={() => window.location.href = "https://wa.me/7976881511?text=Hi%20SagarFilms,%20I%20am%20looking%20for%20photography%20Service."} 
-            className="group h-12 w-12 rounded-full border border-white/10 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/10 flex items-center justify-center transition-all duration-300 cursor-pointer"
-            aria-label="WhatsApp Chat"
-          >
-            <svg 
-              className="fill-gray-400 group-hover:fill-[#c5a880] group-hover:scale-110 transition-all duration-300" 
-              height={20} 
-              width={20} 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 448 512"
-            >
-              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-            </svg>
-          </button>
         </div>
 
         {/* Divider & Copyright */}
-        <div className="border-t border-neutral-800/60 pt-8 mt-12 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] text-gray-500 tracking-wider gap-4">
           <p>© {new Date().getFullYear()} Sagar Films Kota. All rights reserved.</p>
-          <p className="tracking-wide">Crafted for Luxury Weddings</p>
+          
+          {/* Scroll to top */}
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300 focus:outline-none cursor-pointer uppercase font-bold"
+          >
+            <span>Back to Top</span>
+            <div className="h-8 w-8 rounded-full border border-white/10 flex items-center justify-center">
+              <ArrowUp className="h-3.5 w-3.5" />
+            </div>
+          </button>
         </div>
+
       </div>
     </footer>
-  )
+  );
 }
 
-export default FollowUs
+export default FollowUs;

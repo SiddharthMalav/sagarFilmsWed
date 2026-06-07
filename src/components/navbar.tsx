@@ -1,104 +1,161 @@
 "use client"
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Elegance Studio', href: '/Elegance-Studio' },
-    { name: 'Pre-Wedding', href: '/Pre-Wedding' },
-    { name: 'Candids', href: '/Candids' },
-    { name: 'Wedding-Films', href: '/Wedding-Films' },
-]
-
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
+  { name: 'Home', href: '/' },
+  { name: 'Elegance Studio', href: '/Elegance-Studio' },
+  { name: 'Pre-Wedding', href: '/Pre-Wedding' },
+  { name: 'Candids', href: '/Candids' },
+  { name: 'Wedding-Films', href: '/Wedding-Films' },
+];
 
 export default function Navbar() {
-    const pathname = usePathname()
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    return (
-        <Disclosure as="nav" className="sticky top-0 z-50 glassmorphism border-b border-gray-100/50 transition-all duration-300">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="relative flex h-20 items-center justify-between">
-                    {/* Mobile menu button */}
-                    <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:text-amber-600 focus:outline-none">
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
-                        </DisclosureButton>
-                    </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-                    {/* Logo & Brand Name */}
-                    <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
-                        <Link href="/" className="flex shrink-0 items-center gap-3 cursor-pointer group">
-                            <img
-                                alt="Sagar Films Logo"
-                                src="/images/fevicon.jpeg"
-                                className="h-10 w-10 rounded-lg border border-amber-500/20 object-contain bg-white shadow-sm group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <span className="text-xl font-medium tracking-widest text-[#121212] font-serif-luxury group-hover:text-amber-600 transition-colors duration-300">
-                                SAGAR FILMS
-                            </span>
-                        </Link>
-                    </div>
-
-                    {/* Desktop Menu Links */}
-                    <div className="hidden lg:flex lg:items-center">
-                        <div className="flex space-x-8">
-                            {navigation.map((item) => {
-                                const isActive = pathname === item.href;
-                                return (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className={classNames(
-                                            isActive 
-                                                ? 'text-[#c5a880]' 
-                                                : 'text-gray-700 hover:text-[#c5a880]',
-                                            'relative py-2 text-[13px] tracking-widest uppercase font-semibold transition-colors duration-300 cursor-pointer group'
-                                        )}
-                                    >
-                                        {item.name}
-                                        {/* Underline slide effect */}
-                                        <span className={classNames(
-                                            'absolute bottom-0 left-0 w-full h-[1.5px] bg-[#c5a880] transform origin-left transition-transform duration-300',
-                                            isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                                        )} />
-                                    </Link>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 sm:py-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav 
+          className={`relative rounded-full border transition-all duration-500 px-6 sm:px-8 py-3.5 flex items-center justify-between ${
+            scrolled 
+              ? 'bg-[#0a0a0a]/85 border-white/10 shadow-2xl backdrop-blur-md' 
+              : 'bg-transparent border-transparent'
+          }`}
+        >
+          {/* Logo & Brand Name */}
+          <Link href="/" className="flex items-center gap-3 cursor-pointer group">
+            <div className="relative h-11 w-11 overflow-hidden rounded-2xl border border-[#c5a880]/30 bg-white shadow-lg group-hover:scale-105 transition-transform duration-300 p-1 flex items-center justify-center">
+              <img
+                alt="Sagar Films Logo"
+                src="/images/fevicon.jpeg"
+                className="h-full w-full object-contain rounded-xl"
+              />
             </div>
+            <span className={`text-lg sm:text-xl font-medium tracking-[0.25em] font-serif-luxury transition-colors duration-300 ${
+              scrolled ? 'text-white' : 'text-[#0a0a0a] mix-blend-difference'
+            }`}>
+              SAGAR FILMS
+            </span>
+          </Link>
 
-            {/* Mobile Panel */}
-            <DisclosurePanel className="lg:hidden bg-white/95 border-b border-gray-100 animate-scale-in origin-top">
-                <div className="space-y-1 px-4 pb-6 pt-3 shadow-inner">
-                    {navigation.map((item) => {
-                        const isActive = pathname === item.href;
-                        return (
-                            <DisclosureButton
-                                key={item.name}
-                                as="a"
-                                href={item.href}
-                                className={classNames(
-                                    isActive 
-                                        ? 'text-[#c5a880] bg-amber-50/50' 
-                                        : 'text-gray-800 hover:text-[#c5a880] hover:bg-gray-50',
-                                    'block rounded-md px-3 py-3 text-sm tracking-wider uppercase font-semibold cursor-pointer transition-all duration-300'
-                                )}
-                            >
-                                {item.name}
-                            </DisclosureButton>
-                        );
-                    })}
-                </div>
-            </DisclosurePanel>
-        </Disclosure>
-    )
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-8">
+            <div className="flex space-x-1">
+              {navigation.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`relative px-4 py-2 text-[11px] tracking-[0.2em] uppercase font-semibold transition-colors duration-300 ${
+                      isActive 
+                        ? 'text-[#c5a880]' 
+                        : scrolled 
+                          ? 'text-gray-300 hover:text-white' 
+                          : 'text-gray-800 hover:text-[#0a0a0a]'
+                    }`}
+                  >
+                    {item.name}
+                    {isActive && (
+                      <motion.span 
+                        layoutId="activeNavUnderline"
+                        className="absolute bottom-0 left-4 right-4 h-[1.5px] bg-[#c5a880] origin-left"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+            
+            <Link 
+              href="#contact"
+              className="px-5 py-2.5 rounded-full bg-[#c5a880] text-[#0a0a0a] hover:bg-[#b5966c] text-[10px] tracking-[0.25em] uppercase font-bold transition-all duration-300 shadow-md hover:shadow-[#c5a880]/20"
+            >
+              Book Now
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className="flex lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-full focus:outline-none transition-colors ${
+                scrolled ? 'text-white hover:bg-white/10' : 'text-[#0a0a0a] hover:bg-black/5'
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-x-0 top-24 mx-4 bg-[#0a0a0a]/95 border border-white/10 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl z-40 lg:hidden"
+          >
+            <div className="px-6 py-8 space-y-6">
+              {navigation.map((item, idx) => {
+                const isActive = pathname === item.href;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    key={item.name}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block py-3 text-xs tracking-[0.2em] uppercase font-bold border-b border-white/5 ${
+                        isActive ? 'text-[#c5a880]' : 'text-gray-300 hover:text-white'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: navigation.length * 0.05 }}
+                className="pt-4"
+              >
+                <Link
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-center w-full py-4 rounded-xl bg-[#c5a880] text-[#0a0a0a] hover:bg-[#b5966c] text-xs tracking-[0.25em] uppercase font-bold transition-all duration-300"
+                >
+                  Book Consultation
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
 }

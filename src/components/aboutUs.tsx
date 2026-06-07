@@ -1,20 +1,50 @@
-import React from 'react'
+"use client"
+import React from 'react';
+import { motion } from 'framer-motion';
 
-const AboutUs = () => {
+const Images = [
+  { src: "/images/0I1A9668_11zon.jpg", alt: "Wedding guest candid", delay: 0.1 },
+  { src: "/images/IMG_9406_11zon.jpg", alt: "Pre-wedding pose", delay: 0.2, offset: true },
+  { src: "/images/IMG_9401_11zon.jpg", alt: "Couple smile", delay: 0.3 },
+  { src: "/images/0G6A8779-2_11zon.jpg", alt: "Candid portrait", delay: 0.4, offset: true }
+];
+
+export default function AboutUs() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-36 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           
-          {/* Text block (7 Cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs sm:text-sm tracking-[0.2em] font-semibold text-[#c5a880] uppercase block">
-              Our Philosophy
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#121212] font-serif-luxury tracking-wide leading-tight">
-              About Us – Sagar Films
-            </h2>
-            <div className="space-y-4 text-gray-500 text-sm sm:text-base leading-relaxed">
+          {/* Text storytelling block (7 Cols) */}
+          <div className="lg:col-span-6 space-y-8">
+            <div className="space-y-4">
+              <motion.span 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] sm:text-xs tracking-[0.3em] font-bold text-[#c5a880] uppercase block"
+              >
+                Our Philosophy
+              </motion.span>
+              
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0a0a0a] font-serif-luxury tracking-wide leading-tight"
+              >
+                Crafting Visual Legacies, <br />Preserving True Emotion
+              </motion.h2>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="space-y-6 text-gray-500 text-sm sm:text-base font-light leading-relaxed"
+            >
               <p>
                 Welcome to Sagar Films, where we capture your love story in the most magical and unforgettable way. We are a passionate team of wedding photographers and cinematographers dedicated to preserving your special moments through beautiful imagery and creative storytelling.
               </p>
@@ -24,37 +54,49 @@ const AboutUs = () => {
               <p>
                 With years of experience in the wedding industry, we specialize in both traditional and contemporary wedding photography. From candid shots that capture the raw emotions to cinematic wedding films that narrate the entire journey of your day, we ensure that each frame is a work of art.
               </p>
-            </div>
-            <div className="pt-4">
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="pt-4"
+            >
               <a 
                 href="#contact" 
-                className="inline-block bg-[#121212] hover:bg-[#c5a880] text-white px-6 py-3 rounded-lg text-xs uppercase tracking-widest font-semibold transition-all duration-300 cursor-pointer"
+                className="btn-premium-dark inline-block px-8 py-3.5 rounded-full text-[10px] tracking-[0.2em] uppercase font-bold"
               >
-                Learn More
+                <span>Book Consultation</span>
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Image grid block (5 Cols) */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6 items-start">
-            <div className="overflow-hidden rounded-2xl border border-neutral-200/40 shadow-sm group">
-              <img src="/images/0I1A9668_11zon.jpg" className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500 block" alt="Wedding guest candid" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-neutral-200/40 shadow-sm group mt-4 sm:mt-6">
-              <img src="/images/IMG_9406_11zon.jpg" className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500 block" alt="Pre-wedding pose" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-neutral-200/40 shadow-sm group">
-              <img src="/images/IMG_9401_11zon.jpg" className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500 block" alt="Couple smile" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-neutral-200/40 shadow-sm group mt-4 sm:mt-6">
-              <img src="/images/0G6A8779-2_11zon.jpg" className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500 block" alt="Candid portrait" />
-            </div>
+          {/* Image grid block (6 Cols) with asymmetrical staggering */}
+          <div className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6 items-start">
+            {Images.map((img, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 1.2, delay: img.delay, ease: [0.16, 1, 0.3, 1] }}
+                className={`overflow-hidden rounded-3xl border border-neutral-200/30 shadow-md group relative ${
+                  img.offset ? 'mt-6 sm:mt-8' : ''
+                }`}
+              >
+                <div className="absolute inset-0 bg-neutral-900/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img 
+                  src={img.src} 
+                  className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                  alt={img.alt} 
+                />
+              </motion.div>
+            ))}
           </div>
 
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default AboutUs

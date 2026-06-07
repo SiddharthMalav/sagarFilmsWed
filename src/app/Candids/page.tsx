@@ -24,7 +24,7 @@ export default function Candids() {
     "/images/candids/730A7624 copy_11zon.jpg",
   ]
   return (
-    <main className="bg-[#faf9f6]">
+    <main className="bg-[#faf8f5]">
       <Banner 
         src="/images/candids/0I1A1776_11zon.jpg" 
         title="CANDID MOMENTS" 

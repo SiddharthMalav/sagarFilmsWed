@@ -7,7 +7,7 @@ import React from 'react'
 export default function WeddingFilms() {
 
   return (
-    <main className="bg-[#faf9f6]">
+    <main className="bg-[#faf8f5]">
       <Banner 
         src="/images/0G6A8937j_11zon.jpg" 
         title="WEDDING FILMS" 

@@ -10,7 +10,7 @@ export default function EleganceStudio() {
   const imagesSrcs = ["/images/0G6A8779-2_11zon.jpg", "/images/0G6A9432-1_11zon.jpg", "/images/0I1A1750_11zon.jpg", "/images/0I1A6143_11zon.jpg", "/images/0I1A7164_11zon.jpg", "/images/0I1A9668_11zon.jpg", "/images/0I1A9732_11zon.jpg", "/images/0I1A9742 copy_11zon.jpg", "/images/1O3A2522 copy_11zon.jpg", "/images/477A8760 (1)_11zon.jpg", "/images/730A0138 copy_11zon.jpg", "/images/IMG_9401_11zon.jpg", "/images/IMG_9406_11zon.jpg", "/images/IMG_9447_11zon.jpg", "/images/IMG_9407_11zon.jpg", '/images/477A8760 (1)_11zon.jpg']
 
   return (
-    <main className="bg-[#faf9f6]">
+    <main className="bg-[#faf8f5]">
       <Banner 
         src="/images/IMG_9412_11zon.jpg" 
         title="ELEGANCE STUDIO" 

@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import ChatWithUs from "@/components/chatWithUs";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -100,11 +101,13 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#faf9f6] text-[#121212]`}
+        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#faf8f5] text-[#0a0a0a]`}
       >
-        <Navbar />
-        <ChatWithUs />
-        {children}
+        <SmoothScroll>
+          <Navbar />
+          <ChatWithUs />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
